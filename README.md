@@ -1,4 +1,4 @@
-# Projeto para suporte às aulas de integração contínua
+# Projeto as aulas de integração contínua em MC426
 
 ## Problema
 Esse repositório implementa uma API HTTP para validar o texto de uma senha 
@@ -18,7 +18,7 @@ simple_web_api/requirements.txt<br>
 6. Caracteres especiais não podem ser / ^ ~<br>
 
 # Tarefas
-## 0. Faça o fork do projeto no gitlab;
+## 0. Faça o fork do projeto no github;
 ## 1. Faça o clone do seu fork na sua máquina;
 ## 2. Verifique que os testes não cobrem a especificação e adicione testes e implementação adequados;
 ## 3. Rode o seu pipeline com sucesso.
@@ -33,12 +33,12 @@ simple_web_api/requirements.txt<br>
 
 ### clone o seu fork
 ````shell
-$ git clone ssh://git@gitlab.ic.unicamp.br:2222/raxxxxxx/mc426-2022-s2-ci.git
+$ git clone git@github.com:...XXXX.../2023-s1-ci.git
 ````
 
 ### Instalando as dependências
 ````shell
-$ cd mc426-2022-s2-ci/
+$ cd 2023-s1-ci/
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 $ cd simple_web_app
@@ -47,13 +47,13 @@ $ pip install -r requirements.txt
 
 ## Rodando a aplicação web
 ````shell
-$ cd mc426-2022-s2-ci/simple_web_app
-$ uvicorn main:app --reload
+$ cd 2023-s1-ci
+$ uvicorn simple_web_app.main:app --reload
 ````
 
 ## Rodando os testes
 ````shell
-$ cd mc426-2022-s2-ci
+$ cd 2023-s1-ci
 $ pytest
 ````
 
@@ -61,8 +61,8 @@ $ pytest
 ### Publicar imagens docker
 0. Criar uma conta no docker hub https://hub.docker.com/
 1. Criar access token no docker hub
-2. Criar variável mascarada **docker_hub_token** com este access_token no gitlab
-3. Criar variável **docker_hub_login** com o seu espaço no docker hub no gitlab
+2. Criar variável mascarada **docker_hub_token** com este access_token no github
+3. Criar variável **docker_hub_login** com o seu espaço no docker hub no github
 4. Rodar os stages de build e release do pipeline
 
 ### Fazer deploy da aplicação no PaaS chamado deta
@@ -72,22 +72,22 @@ $ pytest
 $ curl -fsSL https://get.deta.dev/cli.sh | sh   # instalar cliente deta
 $ source ~/.bashrc                              # disponibilizar comando
 $ deta login                                    # logar na conta já criada
-$ cd mc426-2022-s2-ci                           # entrar na raiz do projeto
+$ cd 2023-s1-ci                                 # entrar na raiz do projeto
 $ deta new —python simple_web_app               # criar projeto no cloud deta
 $ cd simple_web_app                             # entrar na pasta com código python
 $ deta deploy                                   # realizar deploy
 $ deta visor enable                             # habilitar logs no cloud deta
 ````
 2. Gerar access token em settings no site deta
-3. Criar variável mascarada **DETA_ACCESS_TOKEN** no gitlab
+3. Criar variável mascarada **DETA_ACCESS_TOKEN** no github
 4. Commitar modificações no arquivo simple_web_app/.deta/prog_info
-5. Criar variável **PRODUCTION_URL** no gitlab com a URL do serviço na deta
+5. Criar variável **PRODUCTION_URL** no github com a URL do serviço na deta
 6. Seguir o fluxo de gerência de configuração até a branch main
 7. Disparar o job de deploy manualmente ao final da pipeline na main
 
 ### rodando do docker
 ````shell
-$ cd mc426-2022-s2-ci
+$ cd 2023-s1-ci
 $ docker build -t simple_web_app .
 $ docker run --rm -p 8000:80 simple_web_app
 ````
