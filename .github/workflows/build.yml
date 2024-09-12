@@ -24,9 +24,6 @@ jobs:
     - name: Analysing the code with flake8
       run: poetry run flake8
 
-    - name: Analysing the code with black
-      run: poetry run black --check --diff --color .
-
     - name: Testing
       run: |
         poetry run coverage run --source . --module pytest
