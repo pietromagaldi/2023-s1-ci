@@ -6,8 +6,8 @@ de acordo com alguns critérios. Entretanto, o código está incompleto e possui
 bugs, o seu trabalho é consertá-lo, completá-lo e rodar o pipeline.<br>
 
 Este repositório foi desenvolvido utilizando o gerenciador de pacotes 
-**poetry**, mas você não precisa dele. Basta utilizar o arquivo 
-simple_web_api/requirements.txt<br>
+**poetry**, mas você não precisa dele. Basta utilizar os arquivos
+de dependências requirements.txt e requirements-dev.txt<br>
 
 ### Os critérios para senhas válidas são:
 1. Mínimo de 8 caracteres<br>
@@ -28,7 +28,7 @@ simple_web_api/requirements.txt<br>
 ## Development environment dependencies
 | Dependencies      | Tested Version | Minimum Version | Url                                                            |
 |-------------------|----------------|-----------------|----------------------------------------------------------------|
-| Python            | 3.11           | 3.7.5           | [link](https://www.python.org/downloads/release/python-3110/)  |
+| Python            | 3.13           | 3.7.5           | [link](https://www.python.org/downloads/release/python-3130/)  |
 | Poetry (optional) | 1.2.0          | 1.0.0           | [link](https://python-poetry.org/)                             |
 
 ### clone o seu fork
@@ -41,8 +41,8 @@ $ git clone git@github.com:...XXXX.../2023-s1-ci.git
 $ cd 2023-s1-ci/
 $ python3 -m venv .venv
 $ source .venv/bin/activate
-$ cd simple_web_app
 $ pip install -r requirements.txt
+$ pip install -r requirements-dev.txt
 ````
 
 ## Rodando a aplicação web
