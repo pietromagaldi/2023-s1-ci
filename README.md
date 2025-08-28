@@ -1,4 +1,4 @@
-# Projeto as aulas de integração contínua em MC426
+# Exercício de integração contínua
 
 ## Problema
 Esse repositório implementa uma API HTTP para validar o texto de uma senha 
