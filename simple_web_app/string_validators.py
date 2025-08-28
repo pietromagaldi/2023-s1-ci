@@ -74,6 +74,7 @@ class UpperCaseValidator(Validator):
             msg = "Passwords must have at least 1 upper case letter!"
             raise NoUpperCaseException(detail=msg)
 
+
 class ProhibitedCharacterValidator(Validator):
     def __init__(self):
         self.prohibited_set = set(["/", "^", "~"])
